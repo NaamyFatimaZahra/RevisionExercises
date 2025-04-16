@@ -34,8 +34,11 @@ class Client extends Personne{
         $this->numeroClient = $numeroClient;
      }
      
+        public function getReservationst(){
+            return $this->reservations;
+        }
      public function ajouterReservation(Reservation $r){
-       
+        $this->reservations[] = $r;
      }
 
 
@@ -253,10 +256,10 @@ class Agence{
      
    }
    public function confirmer(){
-     
+     $this->confirmer=true;
    }
    public function  annuler(){
-     
+      $this->annuler=true;
    }
  }
 
@@ -280,9 +283,12 @@ $AgenceCasa->setVehicules([new Voiture(1,23422,'dacia','cf2001',220.2,true,4,4),
 new Moto(1,23422,'dacia','cf2001',220.2,true,4),new Camion(1,23422,'dacia','cf2001',220.2,true,4.3)]);
 
 
-   $AgenceParis->setClients([new Client('amin','amin','email@gmail',1,[new Reservation(1,new Client('amin','amin','email@gmail',1,[]),'2023-10-01',2)]),
+   $AgenceParis->setClients([new Client('amin','amin','email@gmail',1,[]),
 new Client('nom','prenom','email',2,[])]); 
 
+$AgenceParis->getClients()[0]->ajouterReservation(new Reservation(1,new Client('amin','amin','email@gmail',1,[]),'2023-10-01',2));
+
+$AgenceParis->getClients()[0]->getReservationst()[0]->confirmer();
 
 
 
