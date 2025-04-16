@@ -30,6 +30,7 @@ function validerCandidature(id) {
   for (let i = 0; i < candidatures.length; i++) {
     if (candidatures[i].id === id) {
       candidatures[i].statut = "validée";
+     return;
     }
   }
 }
@@ -40,6 +41,7 @@ function rejeterCandidature(id) {
   for (let i = 0; i < candidatures.length; i++) {
     if (candidatures[i].id === id) {
       candidatures[i].statut = "rejetée";
+      return;
     }
   }
 }
@@ -54,6 +56,7 @@ function rechercherCandidat(nom) {
     , l'age:${candidatures[i].age}, le titre du projet: ${
         candidatures[i].projet
       }, le status: ${candidatures[i].statut}`);
+      return;
     }
   }
 }
