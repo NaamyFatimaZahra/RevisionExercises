@@ -5,9 +5,9 @@ let candidatures = [
 //ajouterCandidature(nom, age, projet)
 function ajouterCandidature(nom, age, projet) {
   let obj = {
-    id: candidatures.length===0 ? 1 : candidatures[candidatures.length-1].id + 1,
-    nom: nom,
-    age: age,
+    'id': candidatures.length===0 ? 1 : candidatures[candidatures.length-1].id + 1,
+    'nom': nom,
+    'age': age,
     " projet": projet,
     statut: "en attente",
   };
@@ -117,7 +117,7 @@ function filtrerParStatut(statut) {
      }
    }
 
-   console.log(`les projets qui contiennent le mot clé ${motCle} sont:`);
+   console.log(`les projets sont:`);
     
     for(let i = 0; i < projets.length; i++) {
      console.log(projets[i]);
